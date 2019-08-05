@@ -23,19 +23,19 @@ export class HiveService {
   }
 
   getHiveSections(hiveId: number): Observable<Array<HiveSectionListItem>> {
-    return this.http.get<Array<HiveSectionListItem>>(`${this.url}${hiveId}/sections`);;
+    return this.http.get<Array<HiveSectionListItem>>(`${this.url}${hiveId}/sections`);
   }
 
   addHive(hive: Hive): Observable<Hive> {
-    return null;
+    return this.http.post<Hive>(`${this.url}`, hive);
   }
 
   updateHive(hive: Hive): Observable<Object> {
-    return null;
+    return this.http.put(`${this.url}${hive.id}`, hive);
   }
 
   deleteHive(hiveId: number): Observable<Object> {
-    return null;
+    return this.http.delete(`${this.url}${hiveId}`);    
   }
 
   setHiveStatus(hiveId: number, deletedStatus: boolean): Observable<Object> {
