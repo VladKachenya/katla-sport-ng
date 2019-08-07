@@ -27,7 +27,10 @@ export class HiveSectionFormComponent implements OnInit {
         this.hiveSection.storeHiveId = this.hiveId;
         return;
       }
-      this.hiveSectionService.getHiveSection(p['id']).subscribe(hs => this.hiveSection = hs);
+      this.hiveSectionService.getHiveSection(p['id']).subscribe(hs => {
+        this.hiveSection = hs;
+        this.hiveSection.storeHiveId = this.hiveId;
+      });
       this.existed = true;
     });
   }
@@ -42,7 +45,7 @@ export class HiveSectionFormComponent implements OnInit {
   
   onSubmit() {
     if(this.existed){
-      this.hiveSectionService.updateHiveSection(this.hiveSection);
+      this.hiveSectionService.updateHiveSection(this.hiveSection).subscribe(c => this.navigateToHiveSections());
     }
     else{
       this.hiveSectionService.addHiveSection(this.hiveSection).subscribe(hs => {

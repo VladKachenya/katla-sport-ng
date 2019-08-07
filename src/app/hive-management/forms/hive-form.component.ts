@@ -37,7 +37,7 @@ export class HiveFormComponent implements OnInit {
   
   onSubmit() {
     if(this.existed){
-      this.hiveService.updateHive(this.hive);
+      this.hiveService.updateHive(this.hive).subscribe(c => this.navigateToHives());
     }
     else{
       this.hiveService.addHive(this.hive).subscribe(h => {
