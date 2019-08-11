@@ -11,6 +11,7 @@ import { ProductCategoryListComponent } from './product-management/lists/product
 import { ProductCategoryProductListComponent } from './product-management/lists/product-category-product-list.component';
 import { ProductListComponent } from './product-management/lists/product-list.component';
 import { EmployeeListComponent } from './employee-management/lists/employee-list.component';
+import { EmployeeProfileFormComponent } from './employee-management/forms/employee-profile-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'hive/:hiveId/section', component: HiveSectionFormComponent },
   { path: 'hive/:hiveId/section/:id', component: HiveSectionFormComponent },
   { path: 'employees', component: EmployeeListComponent },
+  { path: 'employee/:id', component: EmployeeProfileFormComponent },
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { ProductCategoryService } from 'app/product-management/services/product-
 import { ProductService } from 'app/product-management/services/product.service';
 import { EmployeeListComponent } from 'app/employee-management/lists/employee-list.component';
 import { EmployeeService } from 'app/employee-management/services/employee.service';
+import { EmployeeProfileFormComponent } from './employee-management/forms/employee-profile-form.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { EmployeeService } from 'app/employee-management/services/employee.servi
     HiveSectionFormComponent,
     HiveSectionListComponent,
     EmployeeListComponent,
+    EmployeeProfileFormComponent,
   ],
   imports: [
     // Angular imports
