@@ -14,6 +14,7 @@ export class EmployeeProfileFormComponent implements OnInit {
     employee: Employee;
     boss: Employee;
     existed = false;
+    bossExisted = false;
 
     constructor(
         private employeeService: EmployeeService,
@@ -26,7 +27,10 @@ export class EmployeeProfileFormComponent implements OnInit {
             if (p['id'] === undefined) return;
             this.employeeService.getEmployee(p['id']).subscribe(e => {
                 this.employee = e;
-                this.employeeService.getEmployee(e.bossId).subscribe(b => this.boss = b);
+                this.employeeService.getEmployee(e.bossId).subscribe(b => {
+                    this.boss = b; 
+                    this.bossExisted = true
+                });
             });
             this.employeeService.getSubordinateEmployees(p['id']).subscribe(se => this.subordinateEmployees = se);
             this.employeeService.getEmployee(p['id']).subscribe(e => this.employee = e);
@@ -36,4 +40,4 @@ export class EmployeeProfileFormComponent implements OnInit {
 
     onSubmit() {
     }
-}
+};

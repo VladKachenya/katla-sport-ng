@@ -1,14 +1,11 @@
-export class Employee{
+export class Employee {
     constructor(
         public id: number,
         public fullName: string,
         public position: string,
         public email: string,
         public photoUrl: string,
-        public bossId: number
-    ) {
-        if(photoUrl == null){
-            //photoUrl = './'
-        }
-    }
+        public bossId: number,
+        public workPlaceAddress: string
+    ) {}
 }
